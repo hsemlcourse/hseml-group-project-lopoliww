@@ -1,0 +1,109 @@
+{
+  "target": "target_log_learners_count",
+  "raw_target": "learners_count",
+  "best_model": "hist_gradient_boosting_random_search",
+  "selection_metric": "min validation RMSE on log1p(learners_count)",
+  "secondary_metrics": [
+    "mae_log",
+    "r2_log",
+    "rmse_learners",
+    "mae_learners"
+  ],
+  "features": [
+    "language",
+    "step_type",
+    "reviews_count",
+    "rating",
+    "lessons_count",
+    "sections_count",
+    "time_to_complete",
+    "submissions_count",
+    "videos_duration",
+    "section_position",
+    "section_units_count",
+    "unit_position_in_section",
+    "unit_progress_weight",
+    "lesson_steps_count",
+    "step_position_in_lesson",
+    "step_cost",
+    "step_has_video",
+    "is_paid",
+    "is_public",
+    "is_archived",
+    "has_certificate",
+    "is_featured",
+    "price_numeric",
+    "has_price_info",
+    "authors_count",
+    "instructors_count",
+    "requirements_count",
+    "tags_count",
+    "certificate_thresholds_count",
+    "title_len",
+    "summary_len",
+    "description_len",
+    "lesson_title_len",
+    "title_word_count",
+    "description_word_count",
+    "lesson_title_word_count",
+    "created_year",
+    "created_month",
+    "_parsed_page"
+  ],
+  "top_permutation_features": [
+    {
+      "feature": "time_to_complete",
+      "importance_mean_rmse_increase": 0.6964066787040785,
+      "importance_std": 0.023209960985462776
+    },
+    {
+      "feature": "_parsed_page",
+      "importance_mean_rmse_increase": 0.1830119545363866,
+      "importance_std": 0.013554951202007687
+    },
+    {
+      "feature": "lessons_count",
+      "importance_mean_rmse_increase": 0.1806269806069702,
+      "importance_std": 0.016962908288080558
+    },
+    {
+      "feature": "title_len",
+      "importance_mean_rmse_increase": 0.1760830561519959,
+      "importance_std": 0.01008231788090982
+    },
+    {
+      "feature": "price_numeric",
+      "importance_mean_rmse_increase": 0.05631576648835164,
+      "importance_std": 0.00624719859081173
+    },
+    {
+      "feature": "title_word_count",
+      "importance_mean_rmse_increase": 0.05256916898290653,
+      "importance_std": 0.006618073654360511
+    },
+    {
+      "feature": "is_paid",
+      "importance_mean_rmse_increase": 0.03973151213137112,
+      "importance_std": 0.016126835137146994
+    },
+    {
+      "feature": "summary_len",
+      "importance_mean_rmse_increase": 0.02782316423390798,
+      "importance_std": 0.002138174965537655
+    },
+    {
+      "feature": "description_word_count",
+      "importance_mean_rmse_increase": 0.026833742884398305,
+      "importance_std": 0.0027044146992404577
+    },
+    {
+      "feature": "lesson_steps_count",
+      "importance_mean_rmse_increase": 0.023809645660156087,
+      "importance_std": 0.002781006468144977
+    }
+  ],
+  "random_state": 42,
+  "n_rows": 16289,
+  "n_columns": 53,
+  "outlier_processing": "numeric feature clipping by 1st/99th train quantiles inside sklearn pipeline"
+}

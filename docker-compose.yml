@@ -1,0 +1,13 @@
+services:
+  ml-pipeline:
+    build: .
+    container_name: stepik-demand-cp2
+    volumes:
+      - .:/app
+    command: >
+      bash -lc "
+      python -m src.eda_plots --input data/processed/stepik_course_steps_processed.csv --output-dir report/images &&
+      python -m src.modeling --input data/processed/stepik_course_steps_processed.csv --output-dir models --search-iter 12 &&
+      pytest tests/test.py tests/test_cp2_additions.py -q &&
+      ruff check src tests
+      "
